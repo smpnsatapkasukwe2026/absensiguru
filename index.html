@@ -3,67 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#a91724">
 <title>Absensi Guru — SMP NEGERI SATU ATAP KASUKWE</title>
 <style>
-:root{--navy:#142b45;--blue:#205b78;--gold:#d6a94b;--cream:#fff8e9;--ink:#203449;--muted:#65778a}
+:root{--red:#c62828;--red2:#ef4444;--white:#fff;--gold:#f5c451;--navy:#14324b;--ink:#23364b;--muted:#627589;--bg:#f6f8fb}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:#f3ead8;color:var(--ink);font-family:Arial,sans-serif;display:flex;flex-direction:column}
-.batik{height:25px;background-color:#17334d;background-image:radial-gradient(circle at 12px 13px,transparent 6px,#d6a94b 7px,#d6a94b 8px,transparent 9px),radial-gradient(circle at 30px 13px,transparent 6px,#d6a94b 7px,#d6a94b 8px,transparent 9px),linear-gradient(45deg,transparent 43%,#d6a94b 44%,#d6a94b 48%,transparent 49%),linear-gradient(-45deg,transparent 43%,#d6a94b 44%,#d6a94b 48%,transparent 49%);background-size:42px 25px,42px 25px,21px 25px,21px 25px}
-main{width:min(1040px,100%);margin:auto;padding:34px 20px 38px;text-align:center}
-.hero{background:linear-gradient(120deg,#142b45,#245b78);border:1px solid #d6a94b;border-radius:24px;color:white;padding:30px 22px 34px;box-shadow:0 16px 36px #142b4522;position:relative;overflow:hidden}
-.hero:before,.hero:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #e5c87866;border-radius:50%;top:-120px}
-.hero:before{left:-70px;box-shadow:0 0 0 15px #e5c87812,0 0 0 30px #e5c8780b}
-.hero:after{right:-70px;box-shadow:0 0 0 15px #e5c87812,0 0 0 30px #e5c8780b}
-.seal{width:68px;height:68px;margin:0 auto 14px;display:grid;place-items:center;border:2px solid var(--gold);border-radius:20px;background:#ffffff12;color:#f7d98f;font-size:22px;font-weight:900;transform:rotate(-3deg);position:relative;z-index:1}
-h1{font-size:clamp(25px,4vw,38px);margin:0;position:relative;z-index:1}
-.hero p{color:#e4edf2;font-size:14px;letter-spacing:1.1px;margin:10px 0 0;position:relative;z-index:1}
-.greeting{margin:22px 0 26px;color:#665638;font-size:14px;line-height:1.6}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;display:flex;flex-direction:column;overflow-x:hidden;position:relative;isolation:isolate}
+/* Latar Pancasila: Garuda sebagai watermark, pita Merah Putih dan ornamen batik */
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(255,255,255,.20),rgba(255,255,255,.27)),url("pancasila-bg.webp") center center/cover no-repeat}
+@media(max-width:760px){body:before{background-position:center top;background-attachment:scroll}}
+/* Batik Nusantara ornament for empty/background areas */
+.batik-pattern{background-color:#17334d;background-image:radial-gradient(circle at 12px 12px,transparent 5px,#d8b45c 6px,#d8b45c 7px,transparent 8px),radial-gradient(circle at 30px 12px,transparent 5px,#d8b45c 6px,#d8b45c 7px,transparent 8px),linear-gradient(45deg,transparent 43%,#d8b45c 44%,#d8b45c 48%,transparent 49%),linear-gradient(-45deg,transparent 43%,#d8b45c 44%,#d8b45c 48%,transparent 49%);background-size:42px 24px,42px 24px,21px 24px,21px 24px}
+.batik-edge{height:20px;flex-shrink:0;opacity:.96}
+.flag-strip{height:12px;background:linear-gradient(to bottom,#d51f2a 50%,#fff 50%);box-shadow:0 2px 8px #1c2e4115}
+main{width:min(1120px,100%);margin:auto;padding:30px 20px 42px;text-align:center;position:relative}
+main:before{content:"";position:absolute;inset:12px 0 auto;height:90px;opacity:.06;pointer-events:none;background-image:radial-gradient(circle,#17334d 3px,transparent 4px);background-size:24px 24px}
+.hero{position:relative;overflow:hidden;border-radius:28px;padding:28px 22px 32px;background:linear-gradient(120deg,#9f101b,#d92735 50%,#e94a4e);color:#fff;box-shadow:0 20px 50px #b71c1c2b;border:1px solid #ffffff55}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 15%,#ffffff14 45%,transparent 68%);transform:translateX(-120%);animation:shine 7s ease-in-out infinite}
+.hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid #ffffff22;border-radius:50%;right:-80px;top:-130px;box-shadow:0 0 0 24px #ffffff09,0 0 0 48px #ffffff08}
+@keyframes shine{0%,55%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
+.school-mark{position:relative;z-index:1;width:74px;height:74px;margin:0 auto 12px;border:2px solid #ffdc86;border-radius:22px;display:grid;place-items:center;background:#ffffff18;font-size:36px;animation:markfloat 3s ease-in-out infinite;box-shadow:0 0 24px #ffd76b55}
+@keyframes markfloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-7px) rotate(3deg)}}
+h1{font-size:clamp(25px,4.3vw,40px);line-height:1.12;margin:0;position:relative;z-index:1;text-shadow:0 2px 10px #6c0b1740}
+.hero p{font-size:13px;letter-spacing:1.4px;color:#ffe8e8;margin:12px 0 0;position:relative;z-index:1;font-weight:700}
+.greeting{margin:22px auto 18px;color:#43566b;line-height:1.7;font-size:14px}.greeting strong{color:var(--red)}
+.mascot-area{margin:0 auto 24px;max-width:880px;min-height:220px;border-radius:24px;background:linear-gradient(135deg,#fff 0%,#fff7ed 100%);border:1px solid #f1d8c8;box-shadow:0 12px 28px #20384a0a;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:8px}
+.mascot-area:before,.mascot-area:after{content:"";position:absolute;border-radius:50%;background:#ffdedf;opacity:.5;animation:blob 8s ease-in-out infinite}.mascot-area:before{width:150px;height:150px;left:-45px;bottom:-85px}.mascot-area:after{width:125px;height:125px;right:-35px;top:-70px;background:#ffedbf;animation-delay:-4s}
+@keyframes blob{50%{transform:scale(1.18) translate(12px,-8px)}}
+.teacher-art{width:min(760px,100%);position:relative;z-index:1;border:1px solid #d5b35b;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#fdf8e9,#fff 50%,#fff4f2);box-shadow:0 10px 28px #25394d15;animation:cartoonbob 5s ease-in-out infinite;padding:24px 14px 20px}
+.batik-ribbon{font-size:10px;letter-spacing:2px;color:#f8e8bb;padding:9px 6px;border-radius:7px;font-weight:700}
+.teacher-emoji{font-size:clamp(48px,8vw,84px);padding:14px 0;filter:drop-shadow(0 8px 4px #233b4c1b)}
+.teacher-caption{font-size:clamp(12px,2vw,16px);font-weight:800;letter-spacing:.7px;color:#17334d;padding:12px 4px 18px}
+.flagwave{transform-origin:0 0;animation:flagwave 2.2s ease-in-out infinite}@keyframes flagwave{0%,100%{transform:skewY(0deg)}50%{transform:skewY(-5deg)}}
+.campusglow{animation:campusglow 4s ease-in-out infinite}@keyframes campusglow{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes cartoonbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.spark{position:absolute;color:#e5a62b;font-size:19px;animation:sparkle 2.5s ease-in-out infinite}.spark.s1{left:12%;top:22%}.spark.s2{right:15%;bottom:19%;animation-delay:.7s}.spark.s3{right:24%;top:17%;animation-delay:1.2s}
+@keyframes sparkle{0%,100%{opacity:.3;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.25) rotate(25deg)}}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;text-align:left}
-.card{background:#fffdf7;border:1px solid #e4d5b6;border-radius:19px;padding:22px;box-shadow:0 9px 24px #3427110d;display:flex;flex-direction:column;min-height:250px;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-5px);box-shadow:0 15px 30px #34271118}
-.card:before{content:"";height:5px;position:absolute;top:0;left:0;right:0;background:repeating-linear-gradient(135deg,#d6a94b 0 6px,#17334d 6px 12px)}
-.icon{font-size:34px;margin:7px 0 12px}
-h2{font-size:19px;color:var(--navy);margin:0 0 9px}
-.card p{font-size:13px;color:var(--muted);line-height:1.65;margin:0 0 20px;flex:1}
-a.button{display:block;text-align:center;text-decoration:none;color:white;background:#1e5a7a;padding:13px 15px;border-radius:10px;font-size:13px;font-weight:700;letter-spacing:.2px}
-.card.user a.button{background:#247657}
-.card.dashboard a.button{background:#956c22}
-.label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#96712e;font-weight:700;margin-bottom:7px}
-.note{font-size:11px;color:#6b6c68;line-height:1.7;margin:24px auto 0;max-width:780px}
-@media(max-width:760px){.cards{grid-template-columns:1fr}.card{min-height:0}.hero{padding:26px 16px}}
+.cards:after{content:"";grid-column:1/-1;height:12px;border-radius:8px;opacity:.12;background:repeating-linear-gradient(45deg,#17334d 0 5px,#d8b45c 5px 8px,#fff 8px 12px}
+.card{background-color:#fff;background-image:radial-gradient(circle at 95% 90%,#d8b45c14 2px,transparent 3px);background-size:18px 18px;border:1px solid #e6eaf0;border-radius:20px;padding:22px;box-shadow:0 10px 28px #172d430a;display:flex;flex-direction:column;min-height:250px;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.card:before{content:"";height:5px;position:absolute;top:0;left:0;right:0;background:linear-gradient(90,#c91f2c,#f7c24b,#fff,#f7c24b,#c91f2c)}.card:hover{transform:translateY(-7px);box-shadow:0 18px 34px #172d431a}
+.icon{font-size:36px;margin:7px 0 12px;transition:transform .3s}.card:hover .icon{transform:scale(1.12) rotate(-5deg)}h2{font-size:19px;color:var(--navy);margin:0 0 9px}.card p{font-size:13px;color:var(--muted);line-height:1.65;margin:0 0 20px;flex:1}.label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#b53b40;font-weight:800;margin-bottom:7px}
+a.button{display:block;text-align:center;text-decoration:none;color:white;background:linear-gradient(120deg,#b91e2b,#e3454d);padding:13px 15px;border-radius:11px;font-size:13px;font-weight:800;letter-spacing:.2px;transition:filter .2s,transform .2s;box-shadow:0 5px 12px #c6282820}a.button:hover{filter:brightness(1.07);transform:translateY(-1px)}.card.user a.button{background:linear-gradient(120deg,#17754e,#26a269)}.card.dashboard a.button{background:linear-gradient(120deg,#a66a11,#d99b27)}
+.note{font-size:11px;color:#687482;line-height:1.7;margin:24px auto 0;max-width:780px}.footer-band{height:10px;background:linear-gradient(90deg,#d62835 0 50%,#fff 50%);border-top:1px solid #e9d7d7}
+@media(max-width:760px){main{padding:20px 14px 30px}.cards{grid-template-columns:1fr}.card{min-height:0}.hero{padding:25px 15px 28px}.mascot-area{min-height:145px}.teacher-art{padding:16px 9px}.teacher-emoji{font-size:48px}.teacher-caption{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="batik"></div>
+<div class="flag-strip"></div><div class="batik-edge batik-pattern"></div>
 <main>
 <section class="hero">
- <div class="seal">S3</div>
+ <div class="school-mark">🇮🇩</div>
  <h1>Absensi Guru</h1>
  <p>SMP NEGERI SATU ATAP KASUKWE · GURU DAN STAF TATA USAHA</p>
 </section>
-<p class="greeting">Selamat datang di Sistem Kehadiran SMP NEGERI SATU ATAP KASUKWE.<br>Silakan pilih halaman sesuai kebutuhan Anda.</p>
+<p class="greeting">Selamat datang di <strong>Sistem Kehadiran SMP NEGERI SATU ATAP KASUKWE</strong>.<br>Disiplin, semangat belajar, dan cinta Indonesia dimulai dari kita! Silakan pilih halaman sesuai kebutuhan.</p>
+<section class="mascot-area" aria-label="Ilustrasi guru dan ornamen batik Nusantara">
+ <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">★</span>
+ <div class="teacher-art" role="img" aria-label="Ilustrasi guru profesional SMP Negeri Satu Atap Kasukwe">
+  <div class="batik-ribbon batik-pattern">NUSANTARA • KASUKWE • PENDIDIKAN • NUSANTARA</div>
+  <div class="teacher-emoji">👩‍🏫　👨‍🏫</div>
+  <div class="teacher-caption">Pendidik Profesional · Berintegritas · Berjiwa Kebangsaan</div>
+  <div class="batik-ribbon batik-pattern">MERDEKA BELAJAR　✦　MERDEKA BELAJAR</div>
+ </div>
+</section>
 <div class="cards">
- <section class="card admin">
-  <div class="label">Pengelolaan sistem</div><div class="icon">🗂️</div>
-  <h2>Admin / Operator</h2>
-  <p>Kelola data pegawai, pendaftaran wajah, pemantauan absensi, koreksi kehadiran, serta laporan harian dan bulanan sesuai hak akses.</p>
-  <a class="button" href="admin.html">Masuk halaman Admin</a>
- </section>
- <section class="card user">
-  <div class="label">Pencatatan kehadiran</div><div class="icon">📷</div>
-  <h2>Guru / Staf</h2>
-  <p>Lakukan absensi masuk dan pulang melalui kamera pengenalan wajah pada perangkat Kios sekolah.</p>
-  <a class="button" href="pengguna.html">Masuk halaman Pengguna</a>
- </section>
- <section class="card dashboard">
-  <div class="label">Informasi sekolah</div><div class="icon">🏅</div>
-  <h2>Dashboard Kehadiran</h2>
-  <p>Pantau kehadiran hari ini dan lihat papan apresiasi pegawai dengan jumlah hari hadir terbanyak pada bulan berjalan.</p>
-  <a class="button" href="dashboard-kehadiran-batik.html">Lihat Dashboard Sekolah</a>
- </section>
+ <section class="card admin"><div class="label">Pengelolaan sistem</div><div class="icon">🗂️</div><h2>Admin / Operator</h2><p>Kelola data pegawai, pendaftaran wajah, pemantauan absensi, koreksi kehadiran, serta laporan harian dan bulanan sesuai hak akses.</p><a class="button" href="admin.html">Masuk halaman Admin</a></section>
+ <section class="card user"><div class="label">Pencatatan kehadiran</div><div class="icon">📷</div><h2>Guru / Staf</h2><p>Lakukan absensi masuk dan pulang melalui kamera pengenalan wajah pada perangkat Kios sekolah.</p><a class="button" href="pengguna.html">Masuk halaman Pengguna</a></section>
+ <section class="card dashboard"><div class="label">Informasi sekolah</div><div class="icon">🏅</div><h2>Dashboard Kehadiran</h2><p>Pantau kehadiran hari ini dan lihat papan apresiasi pegawai dengan jumlah hari hadir terbanyak pada bulan berjalan.</p><a class="button" href="dashboard-kehadiran-batik.html">Lihat Dashboard Sekolah</a></section>
 </div>
 <p class="note">Akses data dikendalikan oleh Supabase Auth dan Row Level Security (RLS). Gunakan hanya publishable/anon key pada halaman web. Jangan membagikan kata sandi atau menggunakan secret/service_role key di GitHub.</p>
 </main>
-<div class="batik"></div>
+<div class="batik-footer batik-pattern"></div><div class="footer-band"></div>
 </body>
 </html>
