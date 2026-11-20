@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin — Absensi Guru SMP NEGERI SATU ATAP KASUKWE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#10243a;--blue:#1769aa;--cyan:#eaf5ff;--ink:#172b42;--muted:#66778a;--line:#e3eaf1;--bg:#f4f7fb;--green:#16845b;--red:#bd3434}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:11px 15px;font-weight:700;background:var(--blue);color:white}button.secondary{background:#e8eef5;color:var(--ink)}button.danger{background:#fff0f0;color:var(--red)}button:disabled{opacity:.45;cursor:not-allowed}.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}.sidebar{background:var(--navy);color:white;padding:25px 17px}.brand{display:flex;align-items:center;gap:12px;padding:4px 7px 28px}.logo{width:44px;height:44px;border-radius:13px;background:#d9edff;color:var(--navy);display:grid;place-items:center;font-weight:800}.brand strong{display:block;font-size:13px;line-height:1.45}.brand small{color:#b8c8d8;font-size:11px}.nav{display:grid;gap:7px}.nav button{background:transparent;text-align:left;color:#d4e0eb;font-weight:600}.nav button.active,.nav button:hover{background:#203b56;color:white}.side-note{font-size:11px;color:#9fb2c4;line-height:1.6;margin:28px 8px}.main{min-width:0}.topbar{height:76px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px}.topbar small{color:var(--muted)}.topbar strong{font-size:14px}.content{max-width:1400px;margin:auto;padding:28px 30px 50px}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:23px}.heading h1{font-size:25px;margin:0 0 7px;letter-spacing:-.7px}.heading p{margin:0;color:var(--muted);font-size:13px}.pill{border-radius:99px;background:#e4f7ed;color:#18754f;padding:8px 12px;font-size:11px;font-weight:800}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat,.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:19px}.stat small{color:var(--muted);font-weight:600}.stat strong{display:block;font-size:27px;margin:10px 0 4px}.stat span{font-size:11px;color:var(--muted)}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.panel{margin-bottom:18px}.panel h2{font-size:15px;margin:0 0 5px}.sub{font-size:12px;color:var(--muted);margin:0 0 18px;line-height:1.5}.camera{background:#101d2b;border-radius:13px;aspect-ratio:4/3;position:relative;overflow:hidden;display:grid;place-items:center;color:#c6d4e0}.camera video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}.camera .cammsg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:13px;line-height:1.6}.camera .frame{position:absolute;width:46%;height:68%;border:2px solid #7ed3ff;border-radius:45% 45% 40% 40%;box-shadow:0 0 0 999px #08111a33;pointer-events:none}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}.field{display:grid;gap:7px;margin-bottom:13px}.field label{font-size:12px;font-weight:700}.field input,.field select{width:100%;border:1px solid #d9e2eb;border-radius:9px;padding:11px 12px;background:white;color:var(--ink)}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.full{grid-column:1/-1}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px;min-width:550px}th,td{padding:12px 10px;text-align:left;border-bottom:1px solid #edf1f5}th{color:#718196;font-size:10px;text-transform:uppercase;letter-spacing:.5px}td{color:#35485d}.empty{text-align:center;color:var(--muted);padding:28px}.section{display:none}.section.active{display:block}.notice{padding:12px 14px;border-radius:10px;background:#fff8e8;color:#805916;font-size:12px;line-height:1.6;margin-bottom:17px}.status{font-size:11px;border-radius:99px;padding:5px 8px;background:#e6f7ee;color:#19734d}.status.late{background:#fff0dc;color:#9b5b00}.toast{position:fixed;right:20px;bottom:20px;max-width:390px;background:#142b42;color:white;border-radius:12px;padding:14px 18px;box-shadow:0 10px 30px #0002;z-index:10;font-size:13px;line-height:1.5;display:none}.footer{font-size:11px;color:#8090a0;margin-top:25px}@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{padding:12px 15px}.brand{padding:4px 7px 12px}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap}.side-note{display:none}.topbar{padding:0 18px}.content{padding:22px 16px}.stats{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}}@media(max-width:480px){.heading{display:block}.pill{display:inline-block;margin-top:13px}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.stats{gap:9px}.stat{padding:14px}.stat strong{font-size:23px}}
+
+.auth-gate{position:fixed;inset:0;z-index:100;background:#0d2036cc;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(5px)}.auth-card{width:min(100%,520px);max-height:92vh;overflow:auto;background:white;border-radius:18px;padding:25px;box-shadow:0 24px 80px #0004}.auth-card h1{font-size:22px;margin:0 0 8px}.auth-card p{font-size:13px;line-height:1.6;color:#66778a}.auth-card .field{margin-bottom:12px}.auth-status{font-size:12px;line-height:1.6;padding:10px 12px;border-radius:9px;background:#eef5fb;color:#24425e;margin:12px 0}.top-actions{display:flex;align-items:center;gap:10px}@media(max-width:480px){.auth-card{padding:19px}}
+
+@media print{
+ @page{size:A4 landscape;margin:12mm}
+ body *{visibility:hidden!important}
+ #monthlyPrintArea,#monthlyPrintArea *{visibility:visible!important}
+ #monthlyPrintArea{position:absolute!important;left:0!important;top:0!important;width:100%!important;margin:0!important;border:0!important;box-shadow:none!important}
+ #monthlyPrintArea .no-print{display:none!important}
+ #monthlyPrintArea table{min-width:0!important;font-size:10px}
+ #monthlyPrintArea th,#monthlyPrintArea td{padding:7px 6px}
+ #monthlyPrintArea h2{font-size:16px}
+}
+
+</style>
+</head>
+<body>
+<div id="authGate" class="auth-gate" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+ <div class="auth-card">
+  <div class="brand" style="padding:0 0 12px;color:#172b42"><div class="logo">S3</div><div><strong>SMP NEGERI SATU ATAP KASUKWE</strong><small style="color:#66778a">Halaman khusus Admin dan Operator</small></div></div>
+  <h1 id="authTitle">Login Admin / Operator</h1>
+  <p>Khusus Admin/Operator. Data hanya dapat dibuka setelah Supabase memverifikasi akun dan peran Anda.</p>
+  <div id="authStatus" class="auth-status">Masukkan konfigurasi Supabase untuk menghubungkan database.</div>
+  <form id="authConfigForm">
+   <div class="field"><label>Supabase Project URL</label><input id="authSupabaseUrl" type="url" placeholder="https://xxxx.supabase.co" required></div>
+   <div class="field"><label>Publishable key / anon key</label><input id="authSupabaseKey" autocomplete="off" placeholder="sb_publishable_..." required></div>
+   <button type="submit" id="connectAuthButton" style="width:100%">Simpan konfigurasi & hubungkan</button>
+  </form>
+  <div style="height:1px;background:#e3eaf1;margin:18px 0"></div>
+  <form id="authLoginForm">
+   <div class="field"><label>Email admin/operator</label><input id="authEmail" type="email" autocomplete="username" placeholder="nama@sekolah.sch.id" required></div>
+   <div class="field"><label>Kata sandi</label><input id="authPassword" type="password" autocomplete="current-password" required></div>
+   <button type="submit" id="loginButton" style="width:100%" disabled>Masuk</button>
+  </form>
+  <p style="font-size:11px;margin-bottom:0">Jangan pernah masukkan service_role atau secret key. Akun juga harus diberi peran admin/operator di database.</p>
+ <p style="margin-top:12px"><a href="index.html">← Kembali ke pilihan halaman</a></p>
+ </div>
+</div>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">S3</div><div><strong>SMP NEGERI SATU ATAP KASUKWE</strong><small>Sistem Absensi Guru</small></div></div>
+ <nav class="nav">
+ <button class="active" data-page="dashboard">▦ &nbsp; Dashboard</button>
+ <button data-page="absensi">◎ &nbsp; Absensi Guru</button>
+ <button data-page="pegawai">♙ &nbsp; Data Pegawai</button>
+ <button data-page="laporan">▤ &nbsp; Laporan Kehadiran</button>
+ <button data-page="pengaturan">⚙ &nbsp; Pengaturan</button>
+ </nav>
+ <div class="side-note">Sistem kehadiran guru dan staf tata usaha.<br>Jaga kerahasiaan data pegawai dan data biometrik.</div>
+</aside>
+<main class="main">
+<header class="topbar"><div><strong id="pageTitle">Dashboard</strong><br><small id="todayLabel"></small></div><div class="top-actions"><span class="pill" id="connection">Belum dikonfigurasi</span><button id="logoutButton" class="secondary" style="display:none;padding:8px 10px;font-size:11px">Keluar</button></div></header>
+<div class="content">
+<section id="dashboard" class="section active">
+ <div class="heading"><div><h1>Selamat datang 👋</h1><p>Ringkasan kehadiran guru dan staf tata usaha hari ini.</p></div><button onclick="showPage('absensi')">Mulai Absensi →</button></div>
+ <div class="notice"><b>Penyiapan diperlukan:</b> sambungkan proyek Supabase dan muat model pengenalan wajah sebelum digunakan untuk absensi resmi. Lihat README untuk langkah konfigurasi dan keamanan.</div>
+ <div class="stats">
+  <div class="stat"><small>Total pegawai aktif</small><strong id="statStaff">0</strong><span>Guru dan staf TU</span></div>
+  <div class="stat"><small>Hadir hari ini</small><strong id="statPresent">0</strong><span>Pegawai terverifikasi</span></div>
+  <div class="stat"><small>Terlambat</small><strong id="statLate">0</strong><span>Berdasarkan jam masuk</span></div>
+  <div class="stat"><small>Alpa hari ini</small><strong id="statAbsent">0</strong><span>Catatan Alpa dari database</span></div>
+ </div>
+ <div class="panel"><h2>Aktivitas kehadiran hari ini</h2><p class="sub">Catatan terbaru dari database sekolah.</p><div class="tablewrap"><table><thead><tr><th>Nama pegawai</th><th>Jenis</th><th>Jam masuk</th><th>Jam pulang</th><th>Bolos pulang</th><th>Status</th></tr></thead><tbody id="dashRows"><tr><td colspan="5" class="empty">Belum ada data. Konfigurasikan database terlebih dahulu.</td></tr></tbody></table></div></div>
+</section>
+<section id="absensi" class="section">
+ <div class="heading"><div><h1>Absensi Guru</h1><p>Verifikasi wajah secara langsung melalui kamera perangkat.</p></div></div>
+ <div class="layout">
+  <div class="panel"><h2>Kamera verifikasi</h2><p class="sub">Posisikan wajah di tengah bingkai dengan pencahayaan cukup.</p>
+   <div class="camera"><video id="video" autoplay muted playsinline></video><div id="cammsg" class="cammsg">Kamera belum diaktifkan.<br>Tekan tombol “Aktifkan kamera”.</div><div class="frame"></div></div>
+   <div class="actions"><button id="startCamera">Aktifkan kamera</button><button id="scanFace" disabled>Kenali wajah</button><button id="stopCamera" class="secondary" disabled>Matikan kamera</button></div>
+   <p class="sub" id="cameraStatus" style="margin:12px 0 0">Verifikasi memerlukan koneksi HTTPS atau localhost dan izin kamera.</p>
+  </div>
+  <div class="panel"><h2>Hasil verifikasi</h2><p class="sub">Identitas akan ditampilkan setelah wajah cocok dengan data terdaftar.</p>
+   <div id="matchResult" style="padding:18px;background:#f5f8fb;border-radius:12px;margin-bottom:16px"><b>Menunggu verifikasi</b><p class="sub" style="margin:7px 0 0">Belum ada wajah yang dikenali.</p></div>
+   <div class="field"><label>Jenis absensi</label><select id="attendanceType"><option value="masuk">Absen Masuk</option><option value="pulang">Absen Pulang</option></select></div>
+   <div class="field"><label>Catatan (opsional)</label><input id="attendanceNote" placeholder="Misalnya: tugas dinas"></div>
+   <button id="saveAttendance" disabled style="width:100%">Simpan Kehadiran</button>
+   <p class="sub" style="margin:12px 0 0">Absensi tersimpan setelah verifikasi wajah berhasil dan server mengonfirmasi penyimpanan.</p>
+  </div>
+ </div>
+</section>
+<section id="pegawai" class="section">
+ <div class="heading"><div><h1>Data Pegawai</h1><p>Kelola profil pegawai dan daftarkan template wajah dengan persetujuan.</p></div></div>
+ <div class="layout">
+  <div class="panel"><h2>Tambah / perbarui pegawai</h2><p class="sub">Aktifkan kamera di halaman Absensi Guru, lalu kembali untuk mengambil template wajah pegawai.</p>
+   <form id="staffForm"><div class="formgrid">
+    <div class="field"><label>NIP / ID Pegawai *</label><input id="staffId" required placeholder="Contoh: 1987..."></div>
+    <div class="field"><label>Nama lengkap *</label><input id="staffName" required placeholder="Nama sesuai data sekolah"></div>
+    <div class="field"><label>Jenis pegawai *</label><select id="staffType"><option>Guru</option><option>Staf Tata Usaha</option></select></div>
+    <div class="field"><label>Jabatan / mapel</label><input id="staffRole" placeholder="Guru Matematika / Operator"></div>
+    <div class="field"><label>Status</label><select id="staffActive"><option value="true">Aktif</option><option value="false">Tidak aktif</option></select></div>
+    <div class="field"><label>Persetujuan pemrosesan wajah</label><select id="staffConsent"><option value="false">Belum dikonfirmasi</option><option value="true">Sudah disetujui</option></select></div>
+   </div><button type="submit">Simpan Data Pegawai</button></form>
+  </div>
+  <div class="panel"><h2>Daftarkan template wajah</h2><p class="sub">Pilih pegawai yang sudah disimpan, aktifkan kamera, lalu ambil beberapa sampel wajah yang jelas.</p>
+   <div class="field"><label>Pegawai</label><select id="enrollStaff"><option value="">Pilih pegawai</option></select></div>
+   <div class="field"><label>Persetujuan pemrosesan biometrik</label><label style="display:flex;gap:9px;align-items:flex-start;font-weight:500;line-height:1.5"><input id="faceConsentConfirm" type="checkbox" style="width:auto;margin-top:3px">Saya mengonfirmasi pegawai yang dipilih telah diberi penjelasan dan menyetujui pendaftaran template wajah. Pegawai dapat memilih prosedur absensi alternatif.</label></div>
+   <button id="enrollFace" disabled>Ambil & simpan template wajah</button>
+   <p class="sub" style="margin-top:12px">Template numerik wajah (embedding) akan disimpan, bukan foto mentah. Template tetap merupakan data biometrik sensitif.</p>
+  </div>
+  <div class="panel"><h2>Daftarkan / ganti PIN pegawai</h2><p class="sub">Khusus Admin. PIN harus enam angka. PIN dikirim ke fungsi database untuk disimpan sebagai hash; tidak ditampilkan kembali.</p>
+   <form id="pinForm">
+    <div class="field"><label>Pegawai aktif</label><select id="pinEmployee" required><option value="">Pilih pegawai</option></select></div>
+    <div class="field"><label>PIN baru (6 angka)</label><input id="employeePin" type="password" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="new-password" required placeholder="Masukkan 6 angka"></div>
+    <div class="field"><label>Ulangi PIN baru</label><input id="employeePinConfirm" type="password" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="new-password" required placeholder="Ulangi 6 angka"></div>
+    <button type="submit" id="saveEmployeePin">Simpan PIN</button>
+    <p id="pinStatus" class="sub" style="margin:10px 0 0">PIN hanya dapat dikelola oleh Admin.</p>
+   </form>
+  </div>
+ </div>
+ <div class="panel"><h2>Daftar pegawai</h2><p class="sub">Data tersinkron dari database online.</p><div class="tablewrap"><table><thead><tr><th>ID Pegawai</th><th>Nama</th><th>Jenis</th><th>Jabatan</th><th>Template wajah</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="staffRows"><tr><td colspan="7" class="empty">Belum ada data.</td></tr></tbody></table></div></div>
+</section>
+<section id="laporan" class="section">
+
+ <div class="panel" id="manualLeavePanel">
+  <div class="heading" style="margin-bottom:10px"><div><h2>Input Manual Izin / Sakit</h2><p class="sub">Khusus Admin. Gunakan bila pegawai tidak dapat hadir untuk verifikasi di Kios.</p></div></div>
+  <form id="manualLeaveForm">
+   <div class="formgrid">
+    <div class="field"><label>Nama pegawai *</label><select id="manualLeaveEmployee" required><option value="">Pilih pegawai</option></select></div>
+    <div class="field"><label>Tanggal izin / sakit *</label><input id="manualLeaveDate" type="date" required></div>
+    <div class="field"><label>Jenis keterangan *</label><select id="manualLeaveType" required><option value="Izin">Izin</option><option value="Sakit">Sakit</option></select></div>
+    <div class="field full"><label>Alasan / catatan admin *</label><input id="manualLeaveReason" maxlength="500" required placeholder="Contoh: Izin keluarga / sakit (catatan seperlunya)"></div>
+   </div>
+   <button type="submit" id="saveManualLeave">Simpan Izin / Sakit Manual</button>
+   <p class="sub" style="margin:10px 0 0">Sistem menyimpan ID Admin dan waktu pencatatan pada kolom audit attendance. Jangan menuliskan informasi kesehatan yang tidak diperlukan.</p>
+  </form>
+ </div>
+
+ <div class="panel" id="automaticAlpaPanel" style="display:none">
+  <div class="heading" style="margin-bottom:10px"><div><h2>Pencatatan Alpa Otomatis</h2><p class="sub">Sistem memeriksa kalender kerja sekolah dan batas Alpa dari database, lalu menjalankan fungsi Supabase <code>process_absences</code>. Hanya Admin yang dapat menjalankan pemeriksaan dari halaman ini.</p></div></div>
+  <div class="notice" style="margin-bottom:12px">Pemeriksaan otomatis berjalan saat Admin membuka halaman setelah melewati batas Alpa pada kalender sekolah, lalu diperiksa kembali berkala selama halaman Admin tetap terbuka. Scheduler Supabase yang sudah ada tetap menjadi proses utama ketika halaman HTML ditutup.</div>
+  <div class="actions"><button type="button" id="runAutomaticAlpa">Periksa Alpa Sekarang</button><button type="button" id="refreshAfterAlpa" class="secondary">Muat Ulang Data</button></div>
+  <p id="automaticAlpaStatus" class="sub" role="status" aria-live="polite" style="margin:12px 0 0">Menunggu Admin login.</p>
+ </div>
+
+ <div class="panel" id="manualAlpaPanel">
+  <div class="heading" style="margin-bottom:10px"><div><h2>Input Alpa Manual</h2><p class="sub">Khusus Admin. Gunakan untuk mencatat pegawai yang tidak hadir tanpa keterangan pada tanggal kerja sekolah.</p></div></div>
+  <form id="manualAlpaForm">
+   <div class="formgrid">
+    <div class="field"><label>Nama pegawai *</label><select id="manualAlpaEmployee" required><option value="">Pilih pegawai</option></select></div>
+    <div class="field"><label>Tanggal Alpa *</label><input id="manualAlpaDate" type="date" required></div>
+    <div class="field full"><label>Alasan / catatan Admin *</label><input id="manualAlpaReason" maxlength="500" required placeholder="Contoh: Tidak hadir dan tidak ada keterangan"></div>
+   </div>
+   <button type="submit" id="saveManualAlpa" class="danger">Simpan Alpa Manual</button>
+   <p class="sub" style="margin:10px 0 0">Sistem mencatat ID Admin dan waktu pencatatan. Catatan absensi masuk/pulang, Izin, dan Sakit yang sudah ada tidak akan ditimpa.</p>
+  </form>
+ </div>
+
+ <div class="panel" id="leaveAdminPanel"><div class="heading" style="margin-bottom:10px"><div><h2>Persetujuan Izin / Sakit</h2><p class="sub">Periksa pengajuan pegawai. Hanya Admin yang dapat menyetujui atau menolak.</p></div><button id="refreshLeave" class="secondary" style="width:auto">Muat ulang</button></div><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Nama Pegawai</th><th>Jenis</th><th>Keterangan</th><th>Status</th><th>Catatan Admin</th><th>Aksi</th></tr></thead><tbody id="leaveRows"><tr><td colspan="7" class="empty">Belum ada pengajuan.</td></tr></tbody></table></div></div>
+ <div class="heading"><div><h1>Laporan Kehadiran</h1><p>Filter data kehadiran dan ekspor ke CSV yang bisa dibuka di Excel.</p></div></div>
+ <div class="panel"><div class="formgrid">
+  <div class="field"><label>Dari tanggal</label><input type="date" id="reportFrom"></div>
+  <div class="field"><label>Sampai tanggal</label><input type="date" id="reportTo"></div>
+  <div class="field"><label>Jenis pegawai</label><select id="reportType"><option value="">Semua</option><option>Guru</option><option>Staf Tata Usaha</option></select></div>
+  <div class="field"><label>Nama / ID (opsional)</label><input id="reportSearch" placeholder="Cari pegawai"></div>
+ </div><div class="actions"><button id="loadReport">Tampilkan laporan</button><button id="exportCsv" class="secondary">Ekspor CSV</button></div></div>
+ <div class="panel"><h2>Rekap absensi</h2><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>ID Pegawai</th><th>Nama</th><th>Jenis</th><th>Masuk</th><th>Pulang</th><th>Bolos Pulang</th><th>Status</th></tr></thead><tbody id="reportRows"><tr><td colspan="8" class="empty">Pilih rentang tanggal lalu tampilkan laporan.</td></tr></tbody></table></div></div>
+
+  <div class="panel" id="monthlyPrintArea">
+   <div class="heading" style="margin-bottom:12px"><div><h2>Rekap Total Kehadiran Per Bulan</h2><p class="sub">Ringkasan per pegawai berdasarkan catatan pada tabel attendance Supabase.</p></div></div>
+   <div class="formgrid no-print"><div class="field"><label>Bulan laporan</label><input type="month" id="reportMonth"></div></div>
+   <div class="actions no-print" style="margin:0 0 14px">
+    <button id="loadMonthlyReport">Tampilkan rekap bulanan</button>
+    <button id="exportMonthlyCsv" class="secondary">Ekspor CSV bulanan</button>
+    <button id="printMonthlyPdf" class="secondary">Cetak / Simpan PDF</button>
+   </div>
+   <p id="monthlyReportLabel" class="sub">Pilih bulan lalu tampilkan rekap.</p>
+   <div class="tablewrap"><table><thead><tr><th>Nama Pegawai</th><th>ID</th><th>Jenis</th><th>Hadir</th><th>Terlambat</th><th>Izin</th><th>Sakit</th><th>Tugas Luar</th><th>Alpa</th><th>Bolos Pulang</th><th>Total tercatat</th></tr></thead><tbody id="monthlyReportRows"><tr><td colspan="11" class="empty">Belum ada rekap bulanan.</td></tr></tbody><tfoot id="monthlyReportFoot"></tfoot></table></div>
+   <p class="sub" style="margin:12px 0 0">Catatan: Bolos Pulang menandai catatan yang memiliki jam masuk tetapi belum memiliki jam pulang. Status ini menunjukkan belum ada absen pulang, bukan bukti otomatis bahwa pegawai sengaja bolos. Hadir termasuk status Terlambat; Izin, Sakit, dan Tugas Luar dihitung terpisah. Alpa dihitung dari status Alpa/Alpha yang tersimpan, ditambah hari kerja pada school_calendar yang tidak memiliki catatan attendance setelah batas absent_after terlewati. Hari libur, tanggal mendatang, dan hari sebelum pegawai terdaftar tidak dihitung.</p>
+  </div>
+</section>
+<section id="pengaturan" class="section">
+ <div class="heading"><div><h1>Pengaturan Sistem</h1><p>Hubungkan aplikasi ke Supabase untuk sinkronisasi multi-perangkat.</p></div></div>
+ <div class="notice">Gunakan URL proyek dan anon/publishable key Supabase saja di browser. Jangan pernah memasukkan service_role key di sini atau ke dalam kode front-end.</div>
+ <div class="panel"><h2>Koneksi database online</h2><p class="sub">Isi URL dan anon key dari pengaturan API proyek Supabase. Informasi disimpan di browser ini saja. Gunakan akun admin yang memiliki kebijakan akses sesuai perannya.</p>
+  <form id="settingsForm"><div class="field"><label>Supabase Project URL</label><input id="supabaseUrl" type="url" placeholder="https://xxxxxxxx.supabase.co" required></div><div class="field"><label>Supabase anon / publishable key</label><input id="supabaseKey" placeholder="sb_publishable_... atau anon key" required></div><div class="field"><label>Jam masuk mulai terlambat (waktu lokal sekolah)</label><input id="lateTime" type="time" value="07:30" required></div><button type="submit">Simpan & hubungkan</button> <button type="button" id="disconnect" class="secondary">Putuskan koneksi</button></form>
+ </div>
+ <div class="panel"><h2>Model pengenalan wajah</h2><p class="sub">Aplikasi menggunakan face-api.js untuk deteksi wajah dan menghasilkan descriptor. Model diambil dari CDN publik saat halaman dimuat. Untuk penggunaan resmi, host model yang sudah diverifikasi pada domain yang dikendalikan sekolah dan pin versi dependensinya.</p><p id="modelStatus">Status model: belum dimuat.</p><button id="loadModels" class="secondary">Muat model wajah</button></div>
+ <div class="panel"><h2>Checklist sebelum operasional</h2><ul style="font-size:12px;line-height:1.9;color:#526478"><li>Gunakan HTTPS, akun administrator individual, dan autentikasi server-side.</li><li>Aktifkan Row Level Security (RLS) dan policies minimum sesuai SQL pada README.</li><li>Batasi akses template wajah hanya untuk petugas yang berwenang.</li><li>Sediakan prosedur absensi alternatif bila kamera / pengenalan wajah gagal.</li><li>Atur retensi dan penghapusan data; lakukan backup terenkripsi dan audit akses.</li></ul></div>
+</section>
+<div class="footer">SMP NEGERI SATU ATAP KASUKWE · Sistem Absensi Guru & Staf Tata Usaha · Prototipe yang perlu dikonfigurasi dan diuji sebelum operasional.</div>
+</div></main></div><div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const state={db:null,stream:null,models:false,staff:[],attendance:[],faceIds:[],matched:null,descriptor:null,role:null,user:null,leaveRequests:[],alpaTimer:null,alpaRunning:false,alpaLastRunDate:null};
+const today=()=>new Date().toLocaleDateString('sv-SE');
+// Format waktu sebagai HH:MM dengan titik dua agar cocok dengan PostgreSQL/Supabase.
+const nowTime=()=>{
+ const now=new Date();
+ return String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+};
+$('todayLabel').textContent=new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+$('reportFrom').value=today();$('reportTo').value=today();$('reportMonth').value=today().slice(0,7);
+function toast(s){$('toast').textContent=s;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',4500)}
+function showPage(p){document.querySelectorAll('.section').forEach(x=>x.classList.toggle('active',x.id===p));document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===p));$('pageTitle').textContent=({dashboard:'Dashboard',absensi:'Absensi Guru',pegawai:'Data Pegawai',laporan:'Laporan Kehadiran',pengaturan:'Pengaturan'})[p];if(p==='pegawai')renderStaff();if(p==='laporan'){renderReport();renderMonthlyReport();renderLeaveRequests()}}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function getSettings(){try{return JSON.parse(localStorage.getItem('kasukweSettings')||'{}')}catch{return {}}}
+function setConn(s,ok=false){$('connection').textContent=s;$('connection').style.background=ok?'#e4f7ed':'#fff0dc';$('connection').style.color=ok?'#18754f':'#925b00'}
+function showAuth(message){$('authGate').style.display='flex';if(message)$('authStatus').textContent=message;$('logoutButton').style.display='none'}
+function hideAuth(){ $('authGate').style.display='none'; $('logoutButton').style.display='inline-block'; }
+function setAuthMessage(message){$('authStatus').textContent=message}
+async function activateSession(){
+ if(!state.db)throw Error('Hubungkan database terlebih dahulu.');
+ const {data:{session},error:sessionError}=await state.db.auth.getSession();
+ if(sessionError)throw sessionError;
+ if(!session){state.role=null;state.user=null;$('loginButton').disabled=true;setConn('Login diperlukan');showAuth('Database terhubung. Silakan login dengan akun admin/operator.');return false;}
+ const {data:role,error:roleError}=await state.db.rpc('get_my_role');
+ if(roleError)throw Error('Gagal memeriksa peran akun. Jalankan SQL keamanan dan tetapkan peran admin/operator. Detail: '+roleError.message);
+ if(!['admin','operator'].includes(role)){await state.db.auth.signOut();state.role=null;state.user=null;throw Error('Akun ini belum diberi peran admin/operator. Minta administrator menetapkan peran melalui SQL Supabase.');}
+ state.role=role;state.user=session.user;const manualPanel=$('manualLeavePanel');if(manualPanel)manualPanel.style.display=role==='admin'?'block':'none';const manualAlpaPanel=$('manualAlpaPanel');if(manualAlpaPanel)manualAlpaPanel.style.display=role==='admin'?'block':'none';const automaticAlpaPanel=$('automaticAlpaPanel');if(automaticAlpaPanel)automaticAlpaPanel.style.display=role==='admin'?'block':'none';await refreshData();if(role==='admin')startAutomaticAlpaChecks();else stopAutomaticAlpaChecks();
+ $('staffForm').querySelectorAll('input,select,button').forEach(el=>el.disabled=role!=='admin');
+ $('pinForm').querySelectorAll('input,select,button').forEach(el=>el.disabled=role!=='admin');
+ $('enrollFace').disabled=role!=='admin'||!state.stream||!state.models;
+ setConn('Login: '+role,true);hideAuth();toast('Login berhasil sebagai '+role+'.');return true;
+}
+async function connect(url,key){if(!window.supabase)throw Error('SDK Supabase tidak berhasil dimuat. Periksa internet/CDN.');if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url))throw Error('Project URL tidak sesuai format https://PROJECT.supabase.co');state.db=window.supabase.createClient(url,key);$('loginButton').disabled=false;const {data:{session},error}=await state.db.auth.getSession();if(error)throw error;if(session){await activateSession()}else{state.role=null;state.user=null;setConn('Login diperlukan');showAuth('Koneksi Supabase berhasil. Login diperlukan untuk mengakses data.');} }
+$('authConfigForm').addEventListener('submit',async e=>{e.preventDefault();const url=$('authSupabaseUrl').value.trim(),key=$('authSupabaseKey').value.trim();try{localStorage.setItem('kasukweSettings',JSON.stringify({url,key,late:'07:30'}));$('supabaseUrl').value=url;$('supabaseKey').value=key;await connect(url,key);setAuthMessage('Koneksi berhasil. Silakan login.');toast('Konfigurasi Supabase disimpan di browser ini.')}catch(err){state.db=null;$('loginButton').disabled=true;setConn('Koneksi gagal');setAuthMessage('Koneksi gagal: '+err.message);}}
+);
+$('authLoginForm').addEventListener('submit',async e=>{e.preventDefault();if(!state.db)return setAuthMessage('Hubungkan Supabase terlebih dahulu.');$('loginButton').disabled=true;try{const {error}=await state.db.auth.signInWithPassword({email:$('authEmail').value.trim(),password:$('authPassword').value});if(error)throw error;await activateSession();$('authPassword').value='';}catch(err){if(state.db)await state.db.auth.signOut().catch(()=>{});state.role=null;state.user=null;showAuth('Login gagal: '+err.message);setConn('Login gagal');}finally{$('loginButton').disabled=!state.db;}});
+$('logoutButton').onclick=async()=>{try{stopAutomaticAlpaChecks();if(state.db)await state.db.auth.signOut();state.role=null;state.user=null;state.staff=[];state.attendance=[];setConn('Login diperlukan');showAuth('Anda sudah keluar. Login kembali untuk melanjutkan.')}catch(e){toast('Gagal keluar: '+e.message)}};
+$('settingsForm').addEventListener('submit',async e=>{e.preventDefault();let url=$('supabaseUrl').value.trim(),key=$('supabaseKey').value.trim();try{localStorage.setItem('kasukweSettings',JSON.stringify({url,key,late:$('lateTime').value||'07:30'}));await connect(url,key)}catch(err){state.db=null;setConn('Koneksi gagal');showAuth('Koneksi gagal: '+err.message);toast('Koneksi gagal: '+err.message)}});
+$('disconnect').onclick=async()=>{stopAutomaticAlpaChecks();if(state.db)await state.db.auth.signOut().catch(()=>{});state.db=null;state.role=null;state.user=null;localStorage.removeItem('kasukweSettings');setConn('Terputus');showAuth('Koneksi diputus. Masukkan konfigurasi Supabase untuk menghubungkan kembali.');$('loginButton').disabled=true;toast('Kredensial lokal dihapus dari browser ini.')};
+async function refreshData(){if(!state.db||!state.role)return;const [s,a,f,l]=await Promise.all([state.db.from('employees').select('id,name,employee_type,role,active,consent,created_at,updated_at').order('name'),state.db.from('attendance').select('*').gte('work_date',today()).lte('work_date',today()).order('created_at',{ascending:false}),state.db.rpc('admin_list_face_status'),state.db.from('leave_requests').select('*').order('created_at',{ascending:false}).limit(100)]);if(s.error)throw s.error;if(a.error)throw a.error;if(f.error)throw Error('Gagal membaca status pendaftaran wajah: '+f.error.message);if(l.error)throw Error('Gagal membaca pengajuan izin/sakit: '+l.error.message);state.staff=s.data||[];
+ const manualSelect=$('manualLeaveEmployee');
+ if(manualSelect){const current=manualSelect.value;manualSelect.innerHTML='<option value="">Pilih pegawai</option>'+state.staff.filter(p=>p.active).map(p=>`<option value="${esc(p.id)}">${esc(p.name)} (${esc(p.id)})</option>`).join('');if(state.staff.some(p=>p.id===current&&p.active))manualSelect.value=current;}
+ const manualAlpaSelect=$('manualAlpaEmployee');
+ if(manualAlpaSelect){const current=manualAlpaSelect.value;manualAlpaSelect.innerHTML='<option value="">Pilih pegawai</option>'+state.staff.filter(p=>p.active).map(p=>`<option value="${esc(p.id)}">${esc(p.name)} (${esc(p.id)})</option>`).join('');if(state.staff.some(p=>p.id===current&&p.active))manualAlpaSelect.value=current;}
+ state.attendance=a.data||[];state.faceIds=(f.data||[]).filter(x=>x.face_registered).map(x=>x.employee_id);state.leaveRequests=l.data||[];renderStaff();renderDashboard();renderReport();renderLeaveRequests()}
+function schoolTimeNow(){return new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jayapura',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date())}
+function stopAutomaticAlpaChecks(){if(state.alpaTimer){clearInterval(state.alpaTimer);state.alpaTimer=null}state.alpaLastRunDate=null}
+function startAutomaticAlpaChecks(){
+ stopAutomaticAlpaChecks();
+ if(state.role!=='admin'||!state.db)return;
+ // Jalankan pemeriksaan awal setelah login, lalu cek kalender lagi setiap lima menit.
+ maybeRunAutomaticAlpa(false);
+ state.alpaTimer=setInterval(()=>maybeRunAutomaticAlpa(false),5*60*1000);
+}
+async function maybeRunAutomaticAlpa(force){
+ if(!state.db||state.role!=='admin'||state.alpaRunning)return;
+ const date=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jayapura',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+ try{
+  const {data:calendar,error:calendarError}=await state.db.from('school_calendar').select('work_date,is_workday,absent_after').eq('work_date',date).maybeSingle();
+  if(calendarError)throw calendarError;
+  if(!calendar||calendar.is_workday!==true){$('automaticAlpaStatus').textContent='Hari ini tidak tercatat sebagai hari kerja sekolah pada school_calendar. Tidak ada Alpa yang diproses.';return}
+  const deadline=String(calendar.absent_after||'09:00').slice(0,5);
+  if(!force&&schoolTimeNow()<deadline){$('automaticAlpaStatus').textContent='Menunggu batas Alpa kalender sekolah: '+deadline+' WIT. Pemeriksaan akan berjalan otomatis setelah waktunya.';return}
+  if(!force&&state.alpaLastRunDate===date)return;
+  state.alpaRunning=true;$('runAutomaticAlpa').disabled=true;
+  $('automaticAlpaStatus').textContent='Sedang memeriksa pegawai yang belum memiliki absensi atau izin/sakit yang disetujui…';
+  const {data,error}=await state.db.rpc('process_absences',{p_work_date:date});
+  if(error)throw error;
+  state.alpaLastRunDate=date;
+  const message=(data&&typeof data==='object'&&data.message)?data.message:(typeof data==='string'?data:'Pemeriksaan Alpa selesai.');
+  $('automaticAlpaStatus').textContent='Terakhir diperiksa '+date+' '+schoolTimeNow()+' WIT. '+message;
+  await refreshData();
+  await renderMonthlyReport();
+ }catch(err){
+  $('automaticAlpaStatus').textContent='Pemeriksaan otomatis belum berhasil: '+err.message+'. Pastikan fungsi public.process_absences(p_work_date date) dan akses Admin tersedia di Supabase.';
+  console.error('Automatic Alpa:',err);
+ }finally{state.alpaRunning=false;$('runAutomaticAlpa').disabled=false;}
+}
+$('runAutomaticAlpa').addEventListener('click',()=>maybeRunAutomaticAlpa(true));
+$('refreshAfterAlpa').addEventListener('click',async()=>{try{await refreshData();await renderMonthlyReport();toast('Data absensi diperbarui.')}catch(e){toast('Gagal memuat ulang: '+e.message)}});
+function renderLeaveRequests(){
+ const body=$('leaveRows');if(!body)return;
+ const rows=state.leaveRequests||[];const people=new Map(state.staff.map(p=>[p.id,p]));
+ body.innerHTML=rows.length?rows.map(r=>{const p=people.get(r.employee_id)||{};const pending=r.status==='Menunggu';const actions=state.role==='admin'&&pending?`<button style="padding:6px 8px;font-size:11px;margin:2px" onclick="reviewLeave('${esc(r.id)}','Disetujui')">Setujui</button><button class="danger" style="padding:6px 8px;font-size:11px;margin:2px" onclick="reviewLeave('${esc(r.id)}','Ditolak')">Tolak</button>`:'-';return `<tr><td>${esc(r.leave_date)}</td><td>${esc(p.name||r.employee_id)}</td><td>${esc(r.leave_type)}</td><td>${esc(r.reason||'-')}</td><td>${esc(r.status)}</td><td>${esc(r.admin_note||'-')}</td><td>${actions}</td></tr>`}).join(''):'<tr><td colspan="7" class="empty">Belum ada pengajuan izin/sakit.</td></tr>';
+}
+window.reviewLeave=async(id,status)=>{
+ if(!state.db||state.role!=='admin')return toast('Hanya Admin yang dapat memutuskan pengajuan.');
+ const note=status==='Ditolak'?prompt('Alasan penolakan (wajib diisi):',''):prompt('Catatan Admin (opsional):','');
+ if(note===null)return;if(status==='Ditolak'&&!note.trim())return toast('Isi alasan penolakan.');
+ try{const {data,error}=await state.db.rpc('review_leave_request',{p_request_id:id,p_status:status,p_admin_note:note.trim()||null});if(error)throw error;toast(data?.message||'Keputusan pengajuan berhasil disimpan.');await refreshData();await renderMonthlyReport()}catch(e){toast('Gagal memproses pengajuan: '+e.message)}
+};
+$('refreshLeave').addEventListener('click',async()=>{try{await refreshData();toast('Daftar pengajuan diperbarui.')}catch(e){toast(e.message)}});
+
+$('manualLeaveDate').value=today();
+$('manualLeaveDate').max=today();
+$('manualLeaveForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ if(!state.db||state.role!=='admin')return toast('Input manual Izin/Sakit hanya dapat dilakukan oleh Admin.');
+ const employeeId=$('manualLeaveEmployee').value;
+ const leaveDate=$('manualLeaveDate').value;
+ const leaveType=$('manualLeaveType').value;
+ const reason=$('manualLeaveReason').value.trim();
+ if(!employeeId||!leaveDate||!reason)return toast('Lengkapi semua kolom wajib.');
+ if(leaveDate>today())return toast('Tanggal Izin/Sakit tidak boleh di masa depan.');
+ if(!['Izin','Sakit'].includes(leaveType))return toast('Jenis keterangan tidak valid.');
+ if(reason.length>500)return toast('Catatan maksimal 500 karakter.');
+ const button=$('saveManualLeave');button.disabled=true;
+ try{
+  const {data:existing,error:findError}=await state.db.from('attendance')
+   .select('id,check_in,check_out,status')
+   .eq('employee_id',employeeId).eq('work_date',leaveDate).maybeSingle();
+  if(findError)throw findError;
+  if(existing&&(existing.check_in||existing.check_out))
+   throw Error('Pegawai sudah memiliki absensi masuk/pulang pada tanggal tersebut. Jangan menimpa catatan kehadiran; lakukan koreksi terpisah bila diperlukan.');
+  const audit={
+   status:leaveType,
+   note:'Input manual Admin: '+reason,
+   corrected_by:state.user.id,
+   corrected_at:new Date().toISOString(),
+   correction_reason:'Input manual '+leaveType+' oleh Admin'
+  };
+  let result;
+  if(existing){
+   result=await state.db.from('attendance').update(audit).eq('id',existing.id);
+  }else{
+   result=await state.db.from('attendance').insert({
+    employee_id:employeeId,work_date:leaveDate,check_in:null,check_out:null,...audit
+   });
+  }
+  if(result.error)throw result.error;
+  $('manualLeaveReason').value='';
+  toast('Catatan '+leaveType+' manual berhasil disimpan. Status ini akan tampil pada laporan dan tidak dihitung sebagai Alpa.');
+  await refreshData();
+  await renderMonthlyReport();
+ }catch(err){toast('Gagal menyimpan Izin/Sakit manual: '+err.message)}
+ finally{button.disabled=false}
+});
+
+$('manualAlpaDate').value=today();
+$('manualAlpaDate').max=today();
+$('manualAlpaForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ if(!state.db||state.role!=='admin')return toast('Input Alpa manual hanya dapat dilakukan oleh Admin.');
+ const employeeId=$('manualAlpaEmployee').value,alpaDate=$('manualAlpaDate').value,reason=$('manualAlpaReason').value.trim();
+ if(!employeeId||!alpaDate||!reason)return toast('Lengkapi semua kolom wajib.');
+ if(alpaDate>today())return toast('Tanggal Alpa tidak boleh di masa depan.');
+ if(reason.length>500)return toast('Catatan maksimal 500 karakter.');
+ const person=state.staff.find(p=>p.id===employeeId);
+ if(!person||!person.active)return toast('Pegawai tidak ditemukan atau tidak aktif.');
+ const button=$('saveManualAlpa');button.disabled=true;
+ try{
+  const {data:existing,error:findError}=await state.db.from('attendance').select('id,check_in,check_out,status').eq('employee_id',employeeId).eq('work_date',alpaDate).maybeSingle();
+  if(findError)throw findError;
+  if(existing){
+   if(existing.check_in||existing.check_out)throw Error('Pegawai sudah memiliki absensi masuk/pulang pada tanggal tersebut. Catatan kehadiran tidak akan ditimpa.');
+   if(['Izin','Sakit','Tugas Luar'].includes(String(existing.status||'')))throw Error('Tanggal tersebut sudah memiliki status '+existing.status+'. Alpa manual tidak dapat menimpa status yang sudah tercatat.');
+   if(['Alpa','Alpha'].includes(String(existing.status||'')))throw Error('Status Alpa pegawai tersebut sudah tercatat pada tanggal ini.');
+  }
+  const audit={status:'Alpa',note:'Input Alpa manual Admin: '+reason,corrected_by:state.user.id,corrected_at:new Date().toISOString(),correction_reason:'Input Alpa manual oleh Admin'};
+  let result;
+  if(existing)result=await state.db.from('attendance').update(audit).eq('id',existing.id);
+  else result=await state.db.from('attendance').insert({employee_id:employeeId,work_date:alpaDate,check_in:null,check_out:null,...audit});
+  if(result.error){
+   if(/attendance_status_check|check constraint|violates check constraint/i.test(result.error.message||''))throw Error('Database menolak status Alpa. Periksa constraint status pada tabel attendance agar mengizinkan nilai Alpa; jangan menonaktifkan RLS.');
+   throw result.error;
+  }
+  $('manualAlpaReason').value='';
+  toast('Status Alpa manual berhasil disimpan dan masuk ke catatan audit.');
+  await refreshData();await renderMonthlyReport();
+ }catch(err){toast('Gagal menyimpan Alpa manual: '+err.message)}
+ finally{button.disabled=false}
+});
+
+function renderDashboard(){const active=state.staff.filter(x=>x.active);$('statStaff').textContent=active.length;const ids=new Set(state.attendance.filter(x=>x.check_in).map(x=>x.employee_id));$('statPresent').textContent=ids.size;const late=state.attendance.filter(x=>String(x.status||'').toLowerCase()==='terlambat').length;$('statLate').textContent=late;const alpa=state.attendance.filter(x=>['alpa','alpha'].includes(String(x.status||'').trim().toLowerCase())).length;$('statAbsent').textContent=alpa;const map=new Map(state.staff.map(x=>[x.id,x]));$('dashRows').innerHTML=state.attendance.length?state.attendance.map(a=>{const p=map.get(a.employee_id)||{};return `<tr><td>${esc(p.name||a.employee_id)}</td><td>${esc(p.employee_type||'-')}</td><td>${esc(a.check_in||'-')}</td><td>${esc(a.check_out||'-')}</td><td>${a.check_in&&!a.check_out?'Ya':'-'}</td><td><span class="status ${a.status==='Terlambat'?'late':''}">${esc(a.status||'Hadir')}</span></td></tr>`}).join(''):'<tr><td colspan="6" class="empty">Belum ada absensi hari ini.</td></tr>'}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderStaff(){const list=state.staff;$('staffRows').innerHTML=list.length?list.map(p=>`<tr><td>${esc(p.id)}</td><td>${esc(p.name)}</td><td>${esc(p.employee_type)}</td><td>${esc(p.role||'-')}</td><td>${state.faceIds.includes(p.id)?'Terdaftar':'Belum'}</td><td>${p.active?'Aktif':'Nonaktif'}</td><td>${state.role==='admin'?`<button class="danger" style="padding:6px 8px;font-size:10px" onclick="deleteStaff('${encodeURIComponent(p.id)}')">Hapus</button>`:'-'}</td></tr>`).join(''):'<tr><td colspan="7" class="empty">Belum ada data pegawai.</td></tr>';const eligible=list.filter(p=>p.active);const opts='<option value="">Pilih pegawai</option>'+eligible.map(p=>`<option value="${esc(p.id)}">${esc(p.name)} — ${esc(p.id)}</option>`).join('');$('enrollStaff').innerHTML=opts;$('pinEmployee').innerHTML='<option value="">Pilih pegawai</option>'+list.filter(p=>p.active).map(p=>`<option value="${esc(p.id)}">${esc(p.name)} — ${esc(p.id)}</option>`).join('');$('pinForm').querySelectorAll('input,select,button').forEach(el=>el.disabled=state.role!=='admin')}
+window.deleteStaff=async id=>{if(!state.db)return toast('Database belum terhubung.');id=decodeURIComponent(id);if(!confirm('Hapus pegawai dan riwayat absensinya sesuai kebijakan sekolah?'))return;const r=await state.db.from('employees').delete().eq('id',id);if(r.error)return toast(r.error.message);await refreshData();toast('Pegawai dihapus jika diizinkan kebijakan database.')};
+
+$('pinForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ if(!state.db||state.role!=='admin')return toast('Hanya Admin yang dapat mendaftarkan PIN.');
+ const id=$('pinEmployee').value;
+ const pin=$('employeePin').value;
+ const confirmPin=$('employeePinConfirm').value;
+ if(!id)return toast('Pilih pegawai terlebih dahulu.');
+ if(!/^[0-9]{6}$/.test(pin))return toast('PIN harus terdiri dari tepat 6 angka.');
+ if(pin!==confirmPin)return toast('PIN dan konfirmasi PIN tidak sama.');
+ const person=state.staff.find(p=>p.id===id);
+ if(!person||!person.active)return toast('Pegawai tidak ditemukan atau tidak aktif.');
+ $('saveEmployeePin').disabled=true;$('pinStatus').textContent='Menyimpan PIN secara aman…';
+ try{
+  const {error}=await state.db.rpc('admin_set_employee_pin',{p_employee_id:id,p_pin:pin});
+  if(error)throw error;
+  $('employeePin').value='';$('employeePinConfirm').value='';
+  $('pinStatus').textContent='PIN berhasil disimpan sebagai hash. Untuk mengganti PIN, ulangi proses ini.';
+  toast('PIN pegawai berhasil disimpan.');
+ }catch(err){$('pinStatus').textContent='Gagal menyimpan PIN. Periksa konfigurasi fungsi SQL dan izin Admin.';toast('Gagal menyimpan PIN: '+err.message)}
+ finally{$('saveEmployeePin').disabled=state.role!=='admin'}
+});
+$('staffForm').addEventListener('submit',async e=>{e.preventDefault();if(!state.db)return toast('Hubungkan database di Pengaturan.');const id=$('staffId').value.trim(),name=$('staffName').value.trim();const row={id,name,employee_type:$('staffType').value,role:$('staffRole').value.trim(),active:$('staffActive').value==='true',consent:$('staffConsent').value==='true'};const {error}=await state.db.from('employees').upsert(row,{onConflict:'id'});if(error)return toast('Gagal menyimpan: '+error.message);$('staffForm').reset();await refreshData();toast('Data pegawai tersimpan.');});
+async function loadModels(){try{$('modelStatus').textContent='Status model: sedang dimuat…';await Promise.all([faceapi.nets.tinyFaceDetector.loadFromUri('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/weights'),faceapi.nets.faceLandmark68Net.loadFromUri('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/weights'),faceapi.nets.faceRecognitionNet.loadFromUri('https://cdn.jsdelivr.net/gh/justadudewhohacks/face-api.js@master/weights')]);state.models=true;$('modelStatus').textContent='Status model: siap.';$('scanFace').disabled=!state.stream;$('enrollFace').disabled=!state.stream;toast('Model wajah siap digunakan.')}catch(e){$('modelStatus').textContent='Gagal memuat model: '+e.message;toast('Model gagal dimuat. Periksa koneksi dan sumber model.')}}
+$('loadModels').onclick=loadModels;
+$('startCamera').onclick=async()=>{try{state.stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false});$('video').srcObject=state.stream;$('cammsg').style.display='none';$('startCamera').disabled=true;$('stopCamera').disabled=false;$('cameraStatus').textContent='Kamera aktif. Pastikan pengguna mengetahui kamera sedang digunakan.';$('scanFace').disabled=!state.models;$('enrollFace').disabled=!state.models;toast('Kamera aktif.')}catch(e){toast('Tidak dapat mengakses kamera: '+e.message+' Pastikan HTTPS dan izin kamera diaktifkan.')}};
+$('stopCamera').onclick=()=>{if(state.stream)state.stream.getTracks().forEach(t=>t.stop());state.stream=null;$('video').srcObject=null;$('cammsg').style.display='flex';$('cammsg').innerHTML='Kamera dimatikan.<br>Aktifkan kembali untuk melanjutkan.';$('startCamera').disabled=false;$('stopCamera').disabled=true;$('scanFace').disabled=true;$('enrollFace').disabled=true;$('saveAttendance').disabled=true};
+async function getDescriptor(){if(!state.models||!state.stream)throw Error('Muat model dan aktifkan kamera terlebih dahulu.');const det=await faceapi.detectSingleFace($('video'),new faceapi.TinyFaceDetectorOptions({inputSize:320,scoreThreshold:.55})).withFaceLandmarks().withFaceDescriptor();if(!det)throw Error('Wajah belum terdeteksi. Hadapkan wajah ke kamera dan coba lagi.');return Array.from(det.descriptor)}
+$('scanFace').onclick=async()=>{try{$('scanFace').disabled=true;$('cameraStatus').textContent='Menganalisis wajah…';const desc=await getDescriptor();state.descriptor=desc;const candidates=state.staff.filter(p=>p.active&&p.consent&&Array.isArray(p.face_descriptor));if(!candidates.length)throw Error('Belum ada template wajah pegawai yang terdaftar.');let best=null,dist=Infinity;for(const p of candidates){const d=faceapi.euclideanDistance(new Float32Array(desc),new Float32Array(p.face_descriptor));if(d<dist){dist=d;best=p}}if(!best||dist>.48){state.matched=null;$('matchResult').innerHTML='<b>Wajah belum cocok</b><p class="sub" style="margin:7px 0 0">Tidak ada kecocokan yang cukup. Silakan coba lagi atau gunakan prosedur absensi alternatif.</p>';$('saveAttendance').disabled=true;toast('Verifikasi tidak berhasil.')}else{state.matched=best;$('matchResult').innerHTML=`<b style="color:#16744e">✓ Wajah dikenali</b><h2 style="margin:12px 0 5px">${esc(best.name)}</h2><p class="sub" style="margin:0">${esc(best.id)} · ${esc(best.employee_type)} · jarak ${dist.toFixed(3)}</p>`;$('saveAttendance').disabled=false;$('cameraStatus').textContent='Verifikasi berhasil. Pastikan identitas yang tampil benar.';toast('Wajah dikenali. Periksa identitas sebelum menyimpan.')}}catch(e){toast(e.message)}finally{$('scanFace').disabled=!state.stream||!state.models}};
+$('enrollFace').onclick=async()=>{try{if(!state.db||state.role!=='admin')throw Error('Hanya Admin yang dapat mendaftarkan template wajah.');const id=$('enrollStaff').value;if(!id)throw Error('Pilih pegawai.');const p=state.staff.find(x=>x.id===id);if(!p||!p.active)throw Error('Pegawai tidak ditemukan atau tidak aktif.');if(!$('faceConsentConfirm').checked)throw Error('Konfirmasikan persetujuan pegawai sebelum merekam wajah.');if(!state.models||!state.stream)throw Error('Muat model wajah dan aktifkan kamera terlebih dahulu.');const samples=[];for(let i=0;i<3;i++){toast(`Sampel ${i+1}/3: posisikan wajah dengan jelas.`);samples.push(await getDescriptor());await new Promise(r=>setTimeout(r,700))}const avg=samples[0].map((_,j)=>samples.reduce((sum,s)=>sum+s[j],0)/samples.length);const {error}=await state.db.rpc('admin_set_employee_face_template',{p_employee_id:id,p_face_template:avg});if(error)throw error;state.faceIds=[...new Set([...state.faceIds,id])];$('faceConsentConfirm').checked=false;await refreshData();toast('Template wajah berhasil disimpan ke tabel privat. Foto mentah tidak disimpan.')}catch(e){toast('Pendaftaran wajah gagal: '+e.message)}};
+$('saveAttendance').onclick=async()=>{try{if(!state.db)throw Error('Database belum terhubung.');if(!state.matched)throw Error('Verifikasi wajah belum berhasil.');const p=state.matched,kind=$('attendanceType').value,dt=nowTime(),date=today();const {data:existing,error:findErr}=await state.db.from('attendance').select('*').eq('employee_id',p.id).eq('work_date',date).maybeSingle();if(findErr)throw findErr;const late=getSettings().late||'07:30';let payload;if(kind==='masuk'){if(existing?.check_in)throw Error('Absensi masuk sudah tercatat hari ini.');payload={employee_id:p.id,work_date:date,check_in:dt,status:dt>late?'Terlambat':'Hadir',note:$('attendanceNote').value.trim()}}else{if(!existing?.check_in)throw Error('Absen masuk belum tercatat.');if(existing.check_out)throw Error('Absensi pulang sudah tercatat hari ini.');payload={check_out:dt,note:$('attendanceNote').value.trim()}}let q=kind==='masuk'?state.db.from('attendance').insert(payload):state.db.from('attendance').update(payload).eq('id',existing.id);const {error}=await q;if(error)throw error;state.matched=null;$('saveAttendance').disabled=true;$('matchResult').innerHTML='<b>Absensi tersimpan</b><p class="sub" style="margin:7px 0 0">Kehadiran berhasil dicatat di database.</p>';await refreshData();toast('Absensi '+kind+' berhasil disimpan pada '+dt+'.')}catch(e){toast('Absensi gagal disimpan: '+e.message)}};
+async function renderReport(){if(!state.db){$('reportRows').innerHTML='<tr><td colspan="8" class="empty">Hubungkan database terlebih dahulu.</td></tr>';return}const from=$('reportFrom').value||today(),to=$('reportTo').value||today();const {data,error}=await state.db.from('attendance').select('*').gte('work_date',from).lte('work_date',to).order('work_date',{ascending:false});if(error){$('reportRows').innerHTML=`<tr><td colspan="8" class="empty">${esc(error.message)}</td></tr>`;return}let rows=(data||[]).map(a=>({...a,person:state.staff.find(p=>p.id===a.employee_id)||{}}));const type=$('reportType').value,search=$('reportSearch').value.toLowerCase();rows=rows.filter(a=>(!type||a.person.employee_type===type)&&(!search||String(a.employee_id).toLowerCase().includes(search)||String(a.person.name||'').toLowerCase().includes(search)));state.report=rows;$('reportRows').innerHTML=rows.length?rows.map(a=>`<tr><td>${esc(a.work_date)}</td><td>${esc(a.employee_id)}</td><td>${esc(a.person.name||'-')}</td><td>${esc(a.person.employee_type||'-')}</td><td>${esc(a.check_in||'-')}</td><td>${esc(a.check_out||'-')}</td><td>${a.check_in&&!a.check_out?'Ya':'-'}</td><td><span class="status ${a.status==='Terlambat'?'late':''}">${esc(a.status||'Hadir')}</span></td></tr>`).join(''):'<tr><td colspan="8" class="empty">Tidak ada data untuk filter ini.</td></tr>'}
+
+function monthBounds(value){
+ if(!/^\d{4}-\d{2}$/.test(value||''))throw Error('Pilih bulan laporan terlebih dahulu.');
+ const [y,m]=value.split('-').map(Number);
+ const start=`${y}-${String(m).padStart(2,'0')}-01`;
+ const last=new Date(y,m,0).getDate();
+ return {start,end:`${y}-${String(m).padStart(2,'0')}-${String(last).padStart(2,'0')}`};
+}
+function monthlyStatusKey(status,checkIn){
+ const s=String(status||'').trim().toLowerCase();
+ if(s==='terlambat')return 'late';
+ if(s==='hadir'||s==='tepat waktu'||(!s&&checkIn))return 'present';
+ if(s==='izin')return 'leave';
+ if(s==='sakit')return 'sick';
+ if(s==='tugas luar')return 'duty';
+ if(s==='alpa'||s==='alpha')return 'absent';
+ if(checkIn)return 'present';
+ return 'other';
+}
+function schoolTodayDate(){
+ return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jayapura',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+}
+async function renderMonthlyReport(){
+ const body=$('monthlyReportRows'),foot=$('monthlyReportFoot');
+ if(!state.db){body.innerHTML='<tr><td colspan="11" class="empty">Hubungkan database terlebih dahulu.</td></tr>';return}
+ try{
+  const {start,end}=monthBounds($('reportMonth').value||today().slice(0,7));
+  $('monthlyReportLabel').textContent=`Periode: ${start} sampai ${end} · SMP NEGERI SATU ATAP KASUKWE`;
+  const [{data,error},{data:calendar,error:calendarError}]=await Promise.all([
+   state.db.from('attendance').select('employee_id,work_date,check_in,check_out,status').gte('work_date',start).lte('work_date',end),
+   state.db.from('school_calendar').select('work_date,is_workday,absent_after').gte('work_date',start).lte('work_date',end)
+  ]);
+  if(error)throw error;
+  if(calendarError)throw Error('Gagal membaca kalender sekolah untuk menghitung Alpa: '+calendarError.message);
+  const type=$('reportType').value,search=$('reportSearch').value.trim().toLowerCase();
+  const people=state.staff.filter(p=>(!type||p.employee_type===type)&&(!search||String(p.id).toLowerCase().includes(search)||String(p.name||'').toLowerCase().includes(search)));
+  const stats=new Map(people.map(p=>[p.id,{person:p,present:0,late:0,leave:0,sick:0,duty:0,absent:0,missedCheckout:0,total:0}]));
+  const attendanceByDay=new Map();
+  for(const a of (data||[])){
+   const r=stats.get(a.employee_id);if(!r)continue;r.total++;
+   attendanceByDay.set(`${a.employee_id}|${a.work_date}`,a);
+   if(a.check_in&&!a.check_out)r.missedCheckout++;
+   const k=monthlyStatusKey(a.status,a.check_in);
+   if(k==='late'){r.present++;r.late++}else if(k==='present')r.present++;
+   else if(k==='leave')r.leave++;else if(k==='sick')r.sick++;else if(k==='duty')r.duty++;else if(k==='absent')r.absent++;
+  }
+  // Hari kerja yang tidak memiliki baris attendance dihitung sebagai Alpa,
+  // setelah batas absent_after terlewati. Hari libur dan tanggal mendatang diabaikan.
+  const schoolDate=schoolTodayDate(),schoolClock=schoolTimeNow();
+  for(const day of (calendar||[])){
+   if(day.is_workday!==true||day.work_date>schoolDate)continue;
+   const deadline=String(day.absent_after||'09:00').slice(0,5);
+   if(day.work_date===schoolDate&&schoolClock<deadline)continue;
+   for(const r of stats.values()){
+    const createdDate=String(r.person.created_at||'').slice(0,10);
+    if(createdDate&&createdDate>day.work_date)continue;
+    const key=`${r.person.id}|${day.work_date}`;
+    if(!attendanceByDay.has(key)){r.absent++;r.total++;}
+   }
+  }
+  const rows=[...stats.values()].sort((a,b)=>String(a.person.name||'').localeCompare(String(b.person.name||''),'id'));
+  const totals=rows.reduce((t,r)=>{for(const k of ['present','late','leave','sick','duty','absent','missedCheckout','total'])t[k]+=r[k];return t},{present:0,late:0,leave:0,sick:0,duty:0,absent:0,missedCheckout:0,total:0});
+  state.monthlyReport=rows;state.monthlyTotals=totals;
+  body.innerHTML=rows.length?rows.map(r=>`<tr><td>${esc(r.person.name||'-')}</td><td>${esc(r.person.id)}</td><td>${esc(r.person.employee_type||'-')}</td><td>${r.present}</td><td>${r.late}</td><td>${r.leave}</td><td>${r.sick}</td><td>${r.duty}</td><td>${r.absent}</td><td>${r.missedCheckout}</td><td>${r.total}</td></tr>`).join(''):'<tr><td colspan="11" class="empty">Tidak ada pegawai sesuai filter.</td></tr>';
+  foot.innerHTML=rows.length?`<tr style="font-weight:800;background:#f4f7fb"><td colspan="3">TOTAL SELURUH PEGAWAI</td><td>${totals.present}</td><td>${totals.late}</td><td>${totals.leave}</td><td>${totals.sick}</td><td>${totals.duty}</td><td>${totals.absent}</td><td>${totals.missedCheckout}</td><td>${totals.total}</td></tr>`:'';
+ }catch(e){body.innerHTML=`<tr><td colspan="11" class="empty">${esc(e.message)}</td></tr>`;foot.innerHTML='';toast('Gagal memuat rekap bulanan: '+e.message)}
+}
+$('loadMonthlyReport').onclick=renderMonthlyReport;
+$('exportMonthlyCsv').onclick=()=>{
+ const rows=state.monthlyReport||[];if(!rows.length)return toast('Tampilkan rekap bulanan terlebih dahulu.');
+ const month=$('reportMonth').value||today().slice(0,7),t=state.monthlyTotals;
+ const csv=[['Nama Pegawai','ID Pegawai','Jenis Pegawai','Hadir','Terlambat','Izin','Sakit','Tugas Luar','Alpa','Bolos Pulang','Total Tercatat'],
+ ...rows.map(r=>[r.person.name||'',r.person.id,r.person.employee_type||'',r.present,r.late,r.leave,r.sick,r.duty,r.absent,r.missedCheckout,r.total]),
+ ['TOTAL SELURUH PEGAWAI','','',t.present,t.late,t.leave,t.sick,t.duty,t.absent,t.missedCheckout,t.total]]
+ .map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');
+ const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download=`rekap-kehadiran-${month}-smp-satap-kasukwe.csv`;a.click();URL.revokeObjectURL(url);
+};
+$('printMonthlyPdf').onclick=async()=>{
+ if(!(state.monthlyReport||[]).length)await renderMonthlyReport();
+ if(!(state.monthlyReport||[]).length)return toast('Tidak ada data rekap untuk dicetak.');
+ window.print();
+};
+
+$('loadReport').onclick=()=>{renderReport();renderMonthlyReport()};
+$('exportCsv').onclick=()=>{const rows=state.report||[];if(!rows.length)return toast('Tidak ada data laporan untuk diekspor.');const csv=[['Tanggal','ID Pegawai','Nama','Jenis Pegawai','Jam Masuk','Jam Pulang','Bolos Pulang','Status','Catatan'],...rows.map(a=>[a.work_date,a.employee_id,a.person.name||'',a.person.employee_type||'',a.check_in||'',a.check_out||'',a.check_in&&!a.check_out?'Ya':'',a.status||'',a.note||''])].map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='laporan-absensi-smp-satap-kasukwe.csv';a.click();URL.revokeObjectURL(url)};
+(async()=>{const s=getSettings();showAuth('Masukkan konfigurasi Supabase atau tunggu konfigurasi yang tersimpan dimuat.');if(s.url&&s.key){$('supabaseUrl').value=s.url;$('supabaseKey').value=s.key;$('authSupabaseUrl').value=s.url;$('authSupabaseKey').value=s.key;$('lateTime').value=s.late||'07:30';try{await connect(s.url,s.key)}catch(e){setConn('Koneksi gagal');showAuth('Tidak dapat memuat database: '+e.message);}}})();
+</script></body></html>
